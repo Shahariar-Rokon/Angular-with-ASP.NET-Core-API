@@ -1,0 +1,70 @@
+<h2>Add Product</h2>
+<br>
+<div style="width: 50%;">
+<div class="form-group">
+    <label for="productName" class="font-weight-bold">Product Name</label>
+    <input type="text" id="productName" class="form-control" [(ngModel)]="productObj.name">
+  </div>  
+  <div class="form-group">
+    <label for="productName" class="font-weight-bold">Product Number</label>
+    <input type="text" id="productName" class="form-control" [(ngModel)]="productObj.productNumber">
+  </div> 
+  <div class="form-group">
+    <label for="productName" class="font-weight-bold">Product Color</label>
+    <input type="text" id="productName" class="form-control" [(ngModel)]="productObj.color">
+  </div> 
+  <div class="form-group">
+    <label for="productName" class="font-weight-bold">Product Standard Cost</label>
+    <input type="text" id="productName" class="form-control" [(ngModel)]="productObj.standardCost">
+  </div> 
+  <div class="form-group">
+    <label for="productName" class="font-weight-bold">Product List Price</label>
+    <input type="text" id="productName" class="form-control" [(ngModel)]="productObj.listPrice">
+  </div> 
+  <div class="form-group">
+    <label for="productName" class="font-weight-bold">Product Size</label>
+    <input type="text" id="productName" class="form-control" [(ngModel)]="productObj.size">
+  </div> 
+  <div class="form-group">
+    <label for="productName" class="font-weight-bold">Product Weight</label>
+    <input type="text" id="productName" class="form-control" [(ngModel)]="productObj.weight">
+  </div> 
+<button type="button" class="btn btn-outline-primary" (click)="addProduct()">Add Product</button>
+<hr>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Number</th>
+            <th scope="col">Color</th>
+            <th scope="col">Standard Cost</th>
+            <th scope="col">List Price</th>
+            <th scope="col">Size</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Category ID</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let p of productList">
+                <td>{{p.name}}</td>
+                <td>{{p.productNumber}}</td>
+                <td>{{p.color}}</td>
+                <td>{{p.standardCost | currency:'USD':true}}</td>
+                <td>{{p.listPrice | currency:'USD':true}}</td>
+                <td>{{p.size}}</td>
+                <td>{{p.weight}}</td>
+                <td>{{p.productCategoryID}}</td>
+                <td><button class="btn btn-danger btn-sm" (click)="deleteProduct(p, productList)">Delete</button></td>
+            </tr>
+    </tbody>
+</table>
+<hr>
+<b>ProductCategoryName</b>
+<br><br>
+<input type="text"  [(ngModel)]="productCatObj.name">
+<br>
+<br>
+<button type="submit" (click)="addCategory()" class="btn btn-outline-success">Submit</button>
+
+</div>

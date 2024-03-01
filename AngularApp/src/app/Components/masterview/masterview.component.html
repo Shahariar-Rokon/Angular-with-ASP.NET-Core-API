@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Product Categories</h2>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Number</th>
+                <th scope="col">Color</th>
+                <th scope="col">Standard Cost</th>
+                <th scope="col">List Price</th>
+                <th scope="col">Size</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Category ID</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of productList">
+                <tr *ngFor="let p of item.products">
+                    <td>{{p.name}}</td>
+                    <td>{{p.productNumber}}</td>
+                    <td>{{p.color}}</td>
+                    <td>{{p.standardCost | currency:'USD':true}}</td>
+                    <td>{{p.listPrice | currency:'USD':true}}</td>
+                    <td>{{p.size}}</td>
+                    <td>{{p.weight}}</td>
+                    <td>{{p.productCategoryID}}</td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" [routerLink]="['/details','edit',item.productCategoryID]">Edit</a>
+                        <a class="btn btn-primary btn-sm" [routerLink]="[]" (click)="deleteProducCategories(item.productCategoryID)">Delete</a>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
