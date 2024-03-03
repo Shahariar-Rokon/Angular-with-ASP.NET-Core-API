@@ -1,10 +1,11 @@
-# ASP.NET Core API with Angular 17
+# ASP.NET Core API with Angular 17 (No Standalone)
 
 
 ## Description
 
 This project was created to demonstrate **Angular 17** using an **ASP.NET Core API**.  The strength of this project is that it smplifies the api and frontend relationship. 
-
+This project utilizes **No Standalone** method for Angular.
+To create no standalone component when creating angular application, you need to use command `ng new AppName --no-standalone`. In this way, the angular uses **app.module.ts** to track modules.
 In this project, I've created a hypothetical scenario about a software where you can:
 
 - Perform **CRUD** operation on products.
